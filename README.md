@@ -1,9 +1,48 @@
-# Задание
-1) Внедрить в проект функционал консольных команд так, чтобы при добавлении новой команды понадобилось минимум изменений
-2) Логика команд должна быть изолирована и в то же время работать в рамках одного шаблона
-3) Добавить команду help, которая выводит информацию обо всех имеющихся консольных командах
-4) Добавить команду spell с единственным аргументом - словом на английском языке
-5) Команда spell принимает на вход слово, а по результатам работы выводит в консоль все буквы этого слова через пробел
+# **CLI**
 
-## Дополнительно
-💎 Реализовать команду - сильно упрощенный gofmt. На вход принимает *.txt файл, на выходе перед каждым абзацем вставляет таб и ставит точку в конце предложений.
+## **Introduction**
+Console command functionality has been integrated into the project with an architecture that demands minimal adjustments when introducing new commands.
+
+## Installation
+Clone this repository
+  ```bash
+    git clone https://github.com/NRKA/CLI.git
+```
+## How to Run
+```bash
+  go run cmd/main.go <argument> <argument>
+```
+  Second argument depends on type of command, for extra information type ```go run cmd/main.go help```
+## **Command Types**
+- help command
+- spell command
+- reformat command
+
+## **Command Overview**
+  ### **Help Command**
+    Shows all available commands. Usage: <command> 
+    Example: go run cmd/main.go help
+  ### **Spell Command**
+    Receives one or more arguments and converts them into letters, separated by spaces. Usage: <command> <argument>
+    Example: go run cmd/main.go spell hello
+  ### **Reformat Command**
+    Receives one .txt format argument and formats the data. Usage: <command> <argument>
+    Example: go run cmd/main.go reformat example.txt
+## **After running the project with the help command:**
+  ```
+  go go run cmd/main.go help 
+  Available commands:                                                                                                      
+  help - shows all available commands. Usage: <command>        
+  reformat - receives one .txt format argument and formats the data. Usage: <command> <argument>
+  spell - receives one or more arguments and converts them into letters, separated by spaces. Usage: <command> <argument>
+  ```
+
+## **Run unit tests**
+```
+  go test ./...
+```
+
+## **Run unit tests with coverage**
+```
+go test ./... -cover
+```
